@@ -9,14 +9,6 @@ class Node implements  GNode{
     private String name;
     private ArrayList<Node>  childrens;
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setChildrens(ArrayList<Node> childrens) {
-        this.childrens = childrens;
-    }
-
     public Node() {
     }
 
@@ -34,7 +26,13 @@ class Node implements  GNode{
     public ArrayList<GNode> getChildren() {
         return null;
     }
+   public void setName(String name) {
+        this.name = name;
+    }
 
+    public void setChildrens(ArrayList<Node> childrens) {
+        this.childrens = childrens;
+    }
     public ArrayList<Node> getChildrens(){
         return childrens;
     }
@@ -42,7 +40,6 @@ class Node implements  GNode{
 
 
 public class Graph    {
-
 
     private  Node root;
 
@@ -90,13 +87,11 @@ public class Graph    {
     }
     public Node getRoot(){return root;}
 
-
     public void displayChildrens(ArrayList<Node> arr) {
         for (int i = 0 ; i < arr.size(); ++i){
             System.out.print(arr.get(i).getName() + " ");
         }
     }
-
 
     public ArrayList<ArrayList<Node>>  path(Node node) {
         if (node == null){return new ArrayList<>();}
